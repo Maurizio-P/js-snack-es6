@@ -5,37 +5,34 @@ console.log("start")
 const arrayBici = [
     {
         name: "triban",
-        weight: "18"
+        weight: 11
     },
     {
         name: "btwin",
-        weight: "16"
+        weight: 16
     },
     {
         name: "gravel",
-        weight: "22"
+        weight: 22
     },
     {
         name: "gravelXL",
-        weight: "24"
+        weight: 24
     }
 ]
 
-console.log(arrayBici);
 
-const copyArrayBici = [...arrayBici]
-console.log(copyArrayBici);
+// funzioneProva(arrayBici)
+console.log(funzioneProva(arrayBici))
 
-forArrayBici(copyArrayBici)
 
-function forArrayBici(array){
+function funzioneProva(array){
+    let minWeightBikes = array[0]
     for (let i = 0; i < array.length; i++) {
-        const {name, weight} = array[i];
-        console.log({name, weight});
+        const {weight} = array[i]
+        if (weight < minWeightBikes.weight) {
+            minWeightBikes = array[i]
+        }
     }
-
+    return minWeightBikes
 }
-
-
-
-
