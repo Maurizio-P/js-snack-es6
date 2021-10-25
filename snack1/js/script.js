@@ -5,11 +5,11 @@ console.log("start")
 const arrayBici = [
     {
         name: "triban",
-        weight: 11
+        weight: 16
     },
     {
         name: "btwin",
-        weight: 16
+        weight: 11
     },
     {
         name: "gravel",
@@ -26,13 +26,15 @@ const arrayBici = [
 console.log(funzioneProva(arrayBici))
 
 
-function funzioneProva(array){
-    let minWeightBikes = array[0]
-    for (let i = 0; i < array.length; i++) {
-        const {weight} = array[i]
-        if (weight < minWeightBikes.weight) {
-            minWeightBikes = array[i]
+function funzioneProva(bici){
+    let minWeightBikes = bici[0]
+    for (let i = 0; i < bici.length; i++) {
+        if (bici[i].weight < minWeightBikes.weight) {
+            minWeightBikes = bici[i]
         }
     }
-    return minWeightBikes
+    // return minWeightBikes
+    const {name, weight} = minWeightBikes
+
+    console.log(`La bici più leggera è ${name} ${weight}`)
 }
